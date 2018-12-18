@@ -1,0 +1,48 @@
+---
+title: "Odetta Midpoint Sample - Analysis"
+author: "Douglas"
+date: "12/12/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(gmodels)
+setwd("/Volumes/GoogleDrive/My Drive/Projects/2018-10-Odetta_Categorizing_Program_Areas/SampleData/odetta_midpoint_sample")
+odetta_sample <- load("odetta_sample.RData")
+```
+
+
+## Overall
+Odetta provided a sample of the data they had categorized as of December 12, 2018. Total observations provided: 
+```{r echo=FALSE}
+nrow(sample9)
+```
+
+The data contained data down to the following granular levels:
+```{r echo=FALSE}
+table(sample9$most_granular)
+```
+
+The total number of Programs identified:
+```{r echo=FALSE}
+tbl <- table(sample9$program_ntee_dummy)
+cbind(tbl,prop.table(tbl))
+```
+Subprograms:
+```{r echo=FALSE}
+tbl <- table(sample9$subprogram_ntee_dummy)
+cbind(tbl,prop.table(tbl))
+```
+Initiative:
+```{r echo=FALSE}
+tbl <- table(sample9$initiative_ntee_dummy)
+cbind(tbl,prop.table(tbl))
+```
+Subinitiative:
+```{r echo=FALSE}
+tbl <- table(sample9$subinitiative_ntee_dummy)
+cbind(tbl,prop.table(tbl))
+```
+
+
